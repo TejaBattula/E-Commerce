@@ -14,6 +14,10 @@ const ShopContextProvider = (props)=>{
     const [cartItems,setCartItems]=useState(getDefaultCart())
     const [isacountcreated,setaccountcreated]=useState(false)
     const [email,setemail]=useState("")
+    const [userDetails,setUserDetails]=useState({})
+    const setAccountDetails = (user)=>{
+        setUserDetails(user)
+    }
     const setAccount = ()=>{
         setaccountcreated(!isacountcreated)
     }
@@ -31,7 +35,7 @@ const ShopContextProvider = (props)=>{
         setemail(value)
         setCartItems(items)
     }
-    const contextvalue = {all_products,addcartItem,removecartItem,cartItems,setAccount,isacountcreated,storeEmail,email}
+    const contextvalue = {all_products,addcartItem,removecartItem,cartItems,setAccount,isacountcreated,storeEmail,email,setAccountDetails,userDetails}
 
     return(
         <ShopContext.Provider value={contextvalue}>

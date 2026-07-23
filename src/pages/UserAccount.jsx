@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import '../pages/css/UserAccount.css'
+import { ShopContext } from '../components/context/ShopContext'
 const UserAccount = () => {
+  const {userDetails}=useContext(ShopContext)
   return (
     <div className='userAccountPage'>
         <div className="accountTitle">
@@ -10,10 +12,10 @@ const UserAccount = () => {
         <div className="accountBody">
             <div className="img"></div>
             <div className="userInfo">
-                <div className="userName"></div>
-                <div className="userEmail"></div>
-                <div className="userPhone"></div>
-                <div className="userAddress"></div>
+                <div className="userName">{userDetails.name}</div>
+                <div className="userEmail">{userDetails.email}</div>
+                <div className="userPhone">{userDetails.mobile}</div>
+                <div className="userAddress">{userDetails.address}</div>
             </div>
         </div>
     </div>

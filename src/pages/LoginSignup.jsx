@@ -4,7 +4,7 @@ import { ShopContext } from '../components/context/ShopContext'
 import { useNavigate } from 'react-router-dom'
 const LoginSignup = () => {
   const [logindisplay,setlogindisplay]=useState(false)
-  const {cartItems,setAccount,storeEmail}=useContext(ShopContext)
+  const {cartItems,setAccount,storeEmail,setAccountDetails}=useContext(ShopContext)
   const [error,seterror]=useState("")
   const [loading,setloading]=useState(false)
   const navigate = useNavigate()
@@ -37,7 +37,7 @@ const LoginSignup = () => {
       
       setAccount()
       storeEmail(data.items,user.email)
-
+      setAccountDetails(user)
 
     }else{
       seterror("signuperror")
