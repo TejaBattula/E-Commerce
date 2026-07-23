@@ -11,7 +11,9 @@ const LoginSignup = () => {
   const [user,setUser]=useState({
     name:"",
     email:"",
-    password:""
+    password:"",
+    mobile:"",
+    address : ""
   })
   const handleValue = (e)=>{
     setUser({...user,
@@ -19,6 +21,8 @@ const LoginSignup = () => {
     })
   }
   const handlesignup=async (e)=>{
+    console.log(user);
+
     e.preventDefault()
     setloading(true)
     const response = await fetch("https://e-commerce-mb34.onrender.com/signup",{
@@ -42,10 +46,13 @@ const LoginSignup = () => {
     setUser({
       name:"",
       email:"",
-      password:""
+      password:"",
+      mobile:"",
+      address : ""
     })
   }
   const handlelogin=async (e)=>{
+    
     e.preventDefault()
     setloading(true)
     
@@ -74,7 +81,9 @@ const LoginSignup = () => {
     setUser({
       name:"",
       email:"",
-      password:""
+      password:"",
+      mobile:"",
+      address : ""
     })
 
   }
@@ -82,22 +91,48 @@ const LoginSignup = () => {
     <div className='login-sign-up-page'>
       {loading===true?<h4>Loading Please wait...</h4>:""}
       {
-        logindisplay?<div className='signup'>
+        logindisplay?<div className='signup accountpage'>
         <h1>Sign Up</h1>
-        <form className='form' onSubmit={(e)=>{handlesignup(e)}} >
+        <form className='form accountcreateForm' onSubmit={(e)=>{handlesignup(e)}} >
+          <div className='userNameEmailInput'>
+          <p className='label'>Name : </p>
           <input value={user.name} onChange={(e)=>{handleValue(e)}} name='name' type="text" placeholder='Your Name' />
-          {error =="signuperror"?<div style={{fontSize:"12px",color:"red"}}>Email already exists!</div>:""}
+          <p className='label'>Email : </p>
+
           <input value={user.email} onChange={(e)=>{handleValue(e)}} name='email' type="text" placeholder='Email Address' />
+          {error =="signuperror"?<div style={{fontSize:"12px",color:"red"}}>Email already exists!</div>:""}
+
+          <p className='label'>Password : </p>
+
           <input value={user.password} onChange={(e)=>{handleValue(e)}} name="password" type="text" placeholder='Password' />
-          <button>Continue</button>
+          <p className='label'>Password : </p>
+
+            <input type="text" name="" id="" />
+          </div>
+          <div className='userAddressInput'>
+            
+
+            <p className='label'>Mobile : </p>
+
+            <input type="text" value={user.mobile} onChange={(e)=>{handleValue(e)}} name="mobile"  placeholder='mobile number' />
+            <p className='label'>Address : </p>
+
+            <textarea rows='10' cols='30' placeholder='Address' name="address" value={user.address} onChange={(e)=>{handleValue(e)}}>
+
+            </textarea>
+            <button className='cont-btn'>Continue</button>
+          </div>
+          
         </form>
+        <div className='login-footer'>
         <p>Already,have an account?<span onClick={()=>{setlogindisplay(!logindisplay)}}>Login here</span></p>
-        <div style={{display:"flex"}}>
+        <div style={{display:"flex",gap:"10px"}}>
           <form>
-        <input type="checkbox" required/>
+            <input type="checkbox" required/>
 
           </form>
         <p>By continuing,i agree to the terms of use & privary policy</p>
+        </div>
         </div>
         </div>:<div  className='signup'>
       <h1>Login</h1>
@@ -109,10 +144,12 @@ const LoginSignup = () => {
 
         <button>Continue</button>
       </form>
-      <p>Don't have an account?<span onClick={()=>{setlogindisplay(!logindisplay)}}>Signup here</span></p>
-      <div style={{display:"flex"}}>
-      <input type="checkbox" required/>
-      <p>By continuing,i agree to the terms of use & privary policy</p>
+      <div className='login-footer'>
+        <p>Don't have an account?<span onClick={()=>{setlogindisplay(!logindisplay)}}>Signup here</span></p>
+        <div style={{display:"flex",gap:"10px"}}>
+        <input type="checkbox" required/>
+        <p>By continuing,i agree to the terms of use & privary policy</p>
+        </div>
       </div>
       </div> 
       }

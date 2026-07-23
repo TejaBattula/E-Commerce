@@ -33,6 +33,7 @@ const Navbar = () => {
         <div className="cart-login">
             <Link to="/login">{isacountcreated===true?<button onClick={()=>{setAccount()}}>Logout</button>:<button>Login</button>}</Link>
             <Link to='/cart'><img src={cart_icon} alt="" /></Link>
+            <Link to='/account'><i class="fa-solid fa-circle-user"></i></Link>
         </div>
     </div>
   )

@@ -4,6 +4,7 @@
     display: flex;
     justify-content: space-between;
     border: 1px solid rgb(214, 212, 212);
+    background-color: white;
     padding: 40px;
 }
 .shop-logo{
@@ -27,19 +28,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
 }
 .cart-login button{
     
     border-radius: 20px;
     height: 35px;
-    border: 1px solid gray;
+    border: none;
+    background-color: rgb(255, 83, 30);
+    color: white;
 }
 .cart-login button:active{
     background-color: orange;
 }
 .cart-login img{
     width: 30px;
+}
+.cart-login a i{
+    font-size: 30px;
+    color: black;
 }
 .categories li hr{
     height: 3px;
@@ -52,6 +59,7 @@
     text-decoration: none;
     color: black;
 }
+
 @media screen and (max-width:679px) {
     .navbar{
         display: flex;

@@ -1,5 +1,5 @@
 .login-sign-up-page{
-    height: 100vh;
+    
     background-color: rgba(255, 115, 0, 0.096);
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@
     width: 100%;
     gap: 20px;
 }
-.form input{
+.form input,textarea{
     height: 50px;
     border: 1px solid rgba(128, 128, 128, 0.678);
     padding: 10px;
@@ -33,11 +33,10 @@
     width: 30%;
     background-color: white;
     padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-.signup p{
-    font-size: 10px;
-    margin: 10px;
-}
+
 .signup h1{
     margin-bottom: 20px;
     text-align: center;
@@ -47,8 +46,52 @@
     color: blue;
     cursor: pointer;
 }
+.accountpage{
+    width: 70%;
+    border-radius: 10px;
+}
+.accountcreateForm{
+    display: flex;
+    flex-direction: row;
+}
+.userAddressInput{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.userNameEmailInput{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.label{
+    font-weight: 800;
+    font-size: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.cont-btn{
+    margin-top: 35px;
+}
+.accountpage textarea{
+    height: 135px;
+    font-size: 13px;
+}
+.login-footer{
+    font-size: 12px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 @media screen and (max-width : 679px){
     .signup{
         width: 80%;
+        height: auto;
+    }
+    .accountcreateForm{
+        flex-direction: column;
     }
 }

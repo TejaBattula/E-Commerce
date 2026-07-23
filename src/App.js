@@ -12,9 +12,10 @@ import womens_banner from './components/Assets/Frontend_Assets/banner_women.png'
 import kids_banner from './components/Assets/Frontend_Assets/banner_kids.png'
 import Breadcrum from './components/Breadcrum/Breadcrum';
 import NewCollections from './components/NewCollections/NewCollections';
+import UserAccount from './pages/UserAccount';
 function App() {
   return (
-    <div>
+    <div className='body'>
       <BrowserRouter>
         <Navbar/>
         
@@ -30,6 +31,8 @@ function App() {
           <Route path="/cart" element={<Cart/>}></Route>
           <Route path="/login" element={<LoginSignup/>}></Route>
           <Route path="/newcollection" element={<NewCollections/>}></Route>
+          <Route path="/account" element={<UserAccount/>}></Route>
+
 
         </Routes>
         <Footer/>

@@ -32,6 +32,14 @@ const UserSchema = new mongoose.Schema({
       type: String,
       required: true
     },
+    mobile :{
+        type : String,
+        required : true
+    },
+    address :{
+        type: String,
+        required : true
+    },
     cartItems: {
       type: Object,
       default: {}
@@ -42,6 +50,8 @@ const User = mongoose.model("Users",UserSchema)
 
   
 app.post('/signup',async (req,res)=>{
+    console.log("hi");
+    
     console.log(req.body);
     const {user,cartItems}=req.body
     const hashPassword = await bcrypt.hash(user.password,10)
@@ -56,6 +66,8 @@ app.post('/signup',async (req,res)=>{
                 name : user.name,
                 email : user.email,
                 password : hashPassword,
+                mobile : user.mobile,
+                address : user.address,
                 cartItems : cartItems
     
             })
@@ -73,7 +85,6 @@ app.post('/signup',async (req,res)=>{
     }
 })
 app.post('/login',async(req,res)=>{
-    console.log("entered into login")
     const {email,password}=req.body
     try {
         const loginuser =await User.findOne({email : email})

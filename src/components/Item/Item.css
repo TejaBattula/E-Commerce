@@ -1,7 +1,7 @@
 .item{
     width: 250px;
     padding: 10px;
-    background-color: rgba(128, 128, 128, 0.171);
+    background-color: white;
     border-radius: 10px;
     transition: all 0.3s ease-in-out;
 }
