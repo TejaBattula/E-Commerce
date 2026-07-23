@@ -1,0 +1,47 @@
+.item{
+    width: 250px;
+    padding: 10px;
+    background-color: rgba(128, 128, 128, 0.171);
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+.item a img{
+    width: 230px;
+    height: 250px;
+    transition: all 0.4s ease-in-out;
+    padding-bottom: 10px;
+}
+.item p{
+    font-size: 12px;
+    text-align: left;
+    margin-bottom: 10px;
+
+}
+.item-prices{
+    display: flex;
+    gap: 20px;
+}
+.item-price-new{
+    font-size: 20px;
+    font-weight: 800;
+}
+.item-price-old{
+    color: rgb(128, 128, 128);
+    text-decoration: line-through;
+    font-size: 20px;
+}
+
+@media screen  and (max-width :679px ){
+    /* .item{
+        box-shadow: 0px 10px 5px gray;
+        border-radius: 10px;
+        padding: 10px;
+    } */
+    .item:hover{
+        box-shadow: 0px 10px 5px gray;
+        padding: 10px;
+    }
+    .item a img{
+        border-radius: 10px;
+    }
+}

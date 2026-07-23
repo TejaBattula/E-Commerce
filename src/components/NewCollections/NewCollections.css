@@ -1,0 +1,23 @@
+.new-collection{
+    display: flex;
+    flex-direction: column;
+    max-width: 1050px;
+    margin: auto;
+
+}
+.new-collection-head{
+    text-align: center;
+    margin: 20px;
+}
+.new-collection-items{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+@media screen and (max-width : 679px) {
+    .new-collection-items{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        margin: auto;
+    }
+}
