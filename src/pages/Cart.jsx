@@ -14,7 +14,7 @@ const Cart = () => {
     console.log(updatedCartItems);
     
     removecartItem(id)
-    const response = await fetch("http://localhost:3001/removeitem",{
+    const response = await fetch("https://e-commerce-mb34.onrender.com/removeitem",{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify({email,cartItems:updatedCartItems})    

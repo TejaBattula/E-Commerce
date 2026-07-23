@@ -24,7 +24,7 @@ const SingleProductpage = (props) => {
                 setcartnotification(false)
                 clearInterval(interval);
             }, 3000); 
-            const response = await fetch("http://localhost:3001/additem",{
+            const response = await fetch("https://e-commerce-mb34.onrender.com/additem",{
                 method:"POST",
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify({email,cartItems:updatedCartItems})    

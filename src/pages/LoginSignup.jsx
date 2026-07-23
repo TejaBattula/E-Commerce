@@ -20,7 +20,7 @@ const LoginSignup = () => {
   const handlesignup=async (e)=>{
     e.preventDefault()
     
-    const response = await fetch("http://localhost:3001/signup",{
+    const response = await fetch("https://e-commerce-mb34.onrender.com/signup",{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify({user,cartItems})
@@ -45,7 +45,7 @@ const LoginSignup = () => {
   const handlelogin=async (e)=>{
     e.preventDefault()
     
-    const response = await fetch("http://localhost:3001/login",{
+    const response = await fetch("https://e-commerce-mb34.onrender.com/login",{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify(user)
