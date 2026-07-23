@@ -11,6 +11,7 @@ import mens_banner from './components/Assets/Frontend_Assets/banner_mens.png'
 import womens_banner from './components/Assets/Frontend_Assets/banner_women.png'
 import kids_banner from './components/Assets/Frontend_Assets/banner_kids.png'
 import Breadcrum from './components/Breadcrum/Breadcrum';
+import NewCollections from './components/NewCollections/NewCollections';
 function App() {
   return (
     <div>
@@ -28,6 +29,7 @@ function App() {
           </Route>
           <Route path="/cart" element={<Cart/>}></Route>
           <Route path="/login" element={<LoginSignup/>}></Route>
+          <Route path="/newcollection" element={<NewCollections/>}></Route>
 
         </Routes>
         <Footer/>

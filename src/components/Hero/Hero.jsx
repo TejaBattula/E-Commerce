@@ -3,9 +3,9 @@ import './Hero.css'
 import hand_icon from '../Assets/Frontend_Assets/hand_icon.png'
 import arrow from '../Assets/Frontend_Assets/arrow.png'
 import hero_image from '../Assets/Frontend_Assets/hero_image.png'
-import NewCollections from '../NewCollections/NewCollections'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 const Hero = () => {
+  const navigate=useNavigate()
   return (
     <div className='hero-page'>
         <div className="hero-left">
@@ -15,7 +15,7 @@ const Hero = () => {
                 <h1>collections</h1>
                 <h1>for everyone</h1>
             </div>
-            <button className='hero-colleciton-btn'>Latest collections<img src={arrow}></img></button>
+            <button className='hero-colleciton-btn' onClick={()=>{navigate('/newcollection')}}>Latest collections<img src={arrow}></img></button>
         </div>
         <div className="hero-right">
             <img src={hero_image} alt="" width="400"/>

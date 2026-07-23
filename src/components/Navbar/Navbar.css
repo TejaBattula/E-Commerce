@@ -30,7 +30,7 @@
     gap: 5px;
 }
 .cart-login button{
-    width: 100px;
+    
     border-radius: 20px;
     height: 35px;
     border: 1px solid gray;
@@ -132,6 +132,9 @@
     .fa-bars{
         display: block;
     }
+    .cart-login button{
+        width: 60px;
+    }
 }
 @media screen and (min-width:679px) {
     .sliderbar-icon{
@@ -139,5 +142,8 @@
     }
     .fa-bars{
         display: none;
+    }
+    .cart-login button{
+        width: 100px;
     }
 }

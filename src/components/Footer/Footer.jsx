@@ -24,7 +24,7 @@ const Footer = () => {
             <img src={whats_app} alt="" />
         </ul>
         <hr />
-        <p className='footer-copy-right'>Copyright @ 2023 - All Right Reserved</p>
+        <p className='footer-copy-right'>Copyright @ 2026 - All Right Reserved</p>
     </div>
   )
 }

@@ -21,21 +21,26 @@
     padding: 10px;
     border: 1px solid gray;
     position: relative;
-    margin: 10px;
+    margin-top: 10px;
+   margin-bottom: 10px;
 }
 .news-letters form button{
-    position: absolute;
     background-color: black;
     color: white;
     height: 50px;
+    width: 100px;
     border-radius: 30px;
     border: none;
-    padding: 10px;
-    margin-top: 10px;
+    margin-top: 20px;
+    margin: auto;
 }
 @media screen and (max-width:679px) {
     .news-letters{
         margin-top: 30px;
+    }
+    .news-letters form{
+        display: flex;
+        flex-direction: column;
     }
     .news-letters form input{
         width: 100%;

@@ -6,6 +6,7 @@ const LoginSignup = () => {
   const [logindisplay,setlogindisplay]=useState(false)
   const {cartItems,setAccount,storeEmail}=useContext(ShopContext)
   const [error,seterror]=useState("")
+  const [loading,setloading]=useState(false)
   const navigate = useNavigate()
   const [user,setUser]=useState({
     name:"",
@@ -19,13 +20,14 @@ const LoginSignup = () => {
   }
   const handlesignup=async (e)=>{
     e.preventDefault()
-    
+    setloading(true)
     const response = await fetch("https://e-commerce-mb34.onrender.com/signup",{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify({user,cartItems})
     })
     const data = await response.json()
+
     if(data.status == 200){
       navigate('/')
       
@@ -36,6 +38,7 @@ const LoginSignup = () => {
     }else{
       seterror("signuperror")
     }
+    setloading(false)
     setUser({
       name:"",
       email:"",
@@ -44,6 +47,7 @@ const LoginSignup = () => {
   }
   const handlelogin=async (e)=>{
     e.preventDefault()
+    setloading(true)
     
     const response = await fetch("https://e-commerce-mb34.onrender.com/login",{
       method:"POST",
@@ -65,6 +69,8 @@ const LoginSignup = () => {
       seterror("loginusererror")
       
     }
+    setloading(false)
+
     setUser({
       name:"",
       email:"",
@@ -74,6 +80,7 @@ const LoginSignup = () => {
   }
   return (
     <div className='login-sign-up-page'>
+      {loading===true?<h4>Loading Please wait...</h4>:""}
       {
         logindisplay?<div className='signup'>
         <h1>Sign Up</h1>
@@ -86,7 +93,10 @@ const LoginSignup = () => {
         </form>
         <p>Already,have an account?<span onClick={()=>{setlogindisplay(!logindisplay)}}>Login here</span></p>
         <div style={{display:"flex"}}>
-        <input type="checkbox"/>
+          <form>
+        <input type="checkbox" required/>
+
+          </form>
         <p>By continuing,i agree to the terms of use & privary policy</p>
         </div>
         </div>:<div  className='signup'>
