@@ -74,7 +74,7 @@ const upload = multer({storage})
 
 app.post('/signup',upload.single("image"),async (req,res)=>{
     
-    console.log(req.body);
+    console.log("hi",req.body);
     console.log(req.body.userImg);
     
     const hashPassword = await bcrypt.hash(req.body.password,10)

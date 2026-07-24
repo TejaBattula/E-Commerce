@@ -39,7 +39,9 @@ const LoginSignup = () => {
 
     formData.append("cartItems", JSON.stringify(cartItems));
 
-
+    console.log(formData.get("image"));
+    
+    
     setloading(true)
     const response = await fetch("https://e-commerce-mb34.onrender.com/signup",{
       method:"POST",
