@@ -90,7 +90,7 @@ app.post('/signup',upload.single("image"),async (req,res)=>{
                 name : user.name,
                 email : user.email,
                 password : hashPassword,
-                image : user.image,
+                image : req.body.userImg,
                 mobile : user.mobile,
                 address : user.address,
                 cartItems : cartItems

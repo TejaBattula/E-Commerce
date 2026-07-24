@@ -13,7 +13,7 @@ const LoginSignup = () => {
     name:"",
     email:"",
     password:"",
-    image :"",
+    
     mobile:"",
     address : ""
   })
@@ -23,14 +23,14 @@ const LoginSignup = () => {
     })
   }
   const handlesignup=async (e)=>{
-    user.image=userImg.name
+    user.image=userImg
     
     e.preventDefault()
     setloading(true)
     const response = await fetch("https://e-commerce-mb34.onrender.com/signup",{
       method:"POST",
       headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({user,cartItems})
+      body:JSON.stringify({user,cartItems,userImg})
     })
     const data = await response.json()
 
