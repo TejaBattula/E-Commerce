@@ -10,11 +10,20 @@ const UserAccount = () => {
             
         </div>
         <div className="accountBody">
-            <div className="img"></div>
+            
+            <div className='userImg'>
+                  <img src="" alt="" />
+                </div>
+            
             <div className="userInfo">
+                
+                <p> Name : </p>
                 <div className="userName">{userDetails.name}</div>
+                <p> Email : </p>
                 <div className="userEmail">{userDetails.email}</div>
+                <p> Mobile :</p>
                 <div className="userPhone">{userDetails.mobile}</div>
+                <p> Address : </p>
                 <div className="userAddress">{userDetails.address}</div>
             </div>
         </div>

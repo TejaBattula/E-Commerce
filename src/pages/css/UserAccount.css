@@ -1,0 +1,44 @@
+.userAccountPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.accountTitle h1{
+    color: orangered;
+    margin: 20px;
+}
+.userImg{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    margin: auto;
+}
+.userInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.userInfo p{
+    font-size: 13px;
+    font-weight: 800;
+}
+.userInfo div{
+    width: 400px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 14px;
+}
+@media screen and (max-width :679px) {
+    .userInfo{
+        width: 280px;
+    }
+    .userInfo div{
+        width: 100%;
+    }
+}

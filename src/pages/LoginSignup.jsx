@@ -67,6 +67,8 @@ const LoginSignup = () => {
       setAccount()
       storeEmail(data.items.cartItems,user.email)
       setAccountDetails(data.items)
+      console.log(data.items);
+      
 
     }
     else if(data.message == "Invalid password or email"){
@@ -105,7 +107,8 @@ const LoginSignup = () => {
           <p className='label'>Password : </p>
 
           <input value={user.password} onChange={(e)=>{handleValue(e)}} name="password" type="text" placeholder='Password' />
-          
+          <p>User Image</p>
+          <input type="file" name="file"  />
           </div>
           <div className='userAddressInput'>
             
