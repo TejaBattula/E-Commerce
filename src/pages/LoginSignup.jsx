@@ -23,7 +23,6 @@ const LoginSignup = () => {
     })
   }
   const handlesignup=async (e)=>{
-    user.image=userImg
     
     e.preventDefault()
 
