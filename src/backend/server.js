@@ -76,7 +76,8 @@ app.post('/signup',upload.single("image"),async (req,res)=>{
     
     console.log("hi",req.body);
     console.log(req.body.userImg);
-    
+    console.log("BODY:", req.body);
+c   onsole.log("FILE:", req.file);
     const hashPassword = await bcrypt.hash(req.body.password,10)
     try {
 
@@ -97,7 +98,7 @@ app.post('/signup',upload.single("image"),async (req,res)=>{
             })
             await newuser.save()
             console.log("Data sent to Database");
-            res.send({status:200,message:"success",items:cartItems})
+            res.send({status:200,message:"success",items:req.body.cartItems})
 
         }
 
