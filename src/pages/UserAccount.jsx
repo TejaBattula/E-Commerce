@@ -3,6 +3,8 @@ import '../pages/css/UserAccount.css'
 import { ShopContext } from '../components/context/ShopContext'
 const UserAccount = () => {
   const {userDetails}=useContext(ShopContext)
+  console.log(userDetails);
+  
   return (
     <div className='userAccountPage'>
         <div className="accountTitle">

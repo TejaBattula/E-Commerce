@@ -9,7 +9,7 @@ const Navbar = () => {
 
     const [category,setCategory]=useState("shop")
     const [menu,setmenu]=useState(false)
-    const {setAccount,isacountcreated}=useContext(ShopContext)
+    const {setAccount,isacountcreated,userDetails}=useContext(ShopContext)
   return (
     <div className='navbar'>
         <i onClick={()=>{setmenu(!menu)}} class="fa-solid fa-bars"></i>
@@ -33,7 +33,8 @@ const Navbar = () => {
         <div className="cart-login">
             <Link to="/login">{isacountcreated===true?<button onClick={()=>{setAccount()}}>Logout</button>:<button>Login</button>}</Link>
             <Link to='/cart'><img src={cart_icon} alt="" /></Link>
-            <Link to='/account'><i class="fa-solid fa-circle-user"></i></Link>
+            <Link to='/account'><div className="fa-circle-user">{userDetails.image?<img src={userDetails.image} alt="" />:"U"}
+                </div></Link>
         </div>
     </div>
   )

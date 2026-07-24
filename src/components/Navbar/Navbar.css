@@ -43,10 +43,26 @@
 .cart-login img{
     width: 30px;
 }
-.cart-login a i{
-    font-size: 30px;
-    color: black;
+.cart-login a .fa-circle-user{
+    width: 35px;
+    height: 35px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    border-radius: 50%;
     
+}
+.cart-login a{
+    text-decoration: none;
+
+}
+.cart-login a .fa-circle-user img{
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
 }
 .categories li hr{
     height: 3px;
@@ -148,7 +164,7 @@
     .cart-login button{
         width: 60px;
     }
-    .cart-login a i{
+    .cart-login a .fa-circle-user{
         padding-right: 15px;
     }
 }

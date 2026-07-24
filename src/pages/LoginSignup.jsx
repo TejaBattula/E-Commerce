@@ -53,8 +53,9 @@ const LoginSignup = () => {
       navigate('/')
       
       setAccount()
+      
       storeEmail(data.items,user.email)
-      setAccountDetails(user)
+      setAccountDetails(data.items)
 
     }else{
       seterror("signuperror")
@@ -83,7 +84,7 @@ const LoginSignup = () => {
       console.log("login Success!");
       navigate('/')
       setAccount()
-      storeEmail(data.items.cartItems,user.email)
+      storeEmail(data.items,user.email)
       setAccountDetails(data.items)
       console.log(data.items);
       
