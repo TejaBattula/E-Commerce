@@ -26,11 +26,25 @@ const LoginSignup = () => {
     user.image=userImg
     
     e.preventDefault()
+
+
+
+    const formData = new FormData();
+
+    formData.append("name", user.name);
+    formData.append("email", user.email);
+    formData.append("password", user.password);
+    formData.append("mobile", user.mobile);
+    formData.append("address", user.address);
+    formData.append("image", userImg);
+
+    formData.append("cartItems", JSON.stringify(cartItems));
+
+
     setloading(true)
     const response = await fetch("https://e-commerce-mb34.onrender.com/signup",{
       method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({user,cartItems,userImg})
+      body:formData
     })
     const data = await response.json()
 

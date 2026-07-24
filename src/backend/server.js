@@ -74,26 +74,25 @@ const upload = multer({storage})
 
 app.post('/signup',upload.single("image"),async (req,res)=>{
     
-    const {user,cartItems}=req.body
-    console.log("=>",user.image);
-    console.log(req.userImg);
+    console.log(req.body);
+    console.log(req.body.formData.userImg);
     
-    const hashPassword = await bcrypt.hash(user.password,10)
+    const hashPassword = await bcrypt.hash(req.body.formData.password,10)
     try {
 
-        const signupuser = await User.findOne({email:user.email})
+        const signupuser = await User.findOne({email:req.body.formData.email})
 
         if(signupuser){
             return res.send({message : "email exists"})
         }else{
             const newuser =new User({
-                name : user.name,
-                email : user.email,
+                name : req.body.formData.name,
+                email : req.body.formData.email,
                 password : hashPassword,
-                image : req.body.userImg,
-                mobile : user.mobile,
-                address : user.address,
-                cartItems : cartItems
+                image : req.body.formData.userImg,
+                mobile :req.body.formData.mobile,
+                address : req.body.formData.address,
+                cartItems : req.body.formData.cartItems
     
             })
             await newuser.save()
