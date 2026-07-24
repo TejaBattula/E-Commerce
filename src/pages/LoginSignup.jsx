@@ -7,11 +7,13 @@ const LoginSignup = () => {
   const {cartItems,setAccount,storeEmail,setAccountDetails}=useContext(ShopContext)
   const [error,seterror]=useState("")
   const [loading,setloading]=useState(false)
+  const [userImg,setuserImg]=useState(null)
   const navigate = useNavigate()
   const [user,setUser]=useState({
     name:"",
     email:"",
     password:"",
+    image :"",
     mobile:"",
     address : ""
   })
@@ -21,7 +23,8 @@ const LoginSignup = () => {
     })
   }
   const handlesignup=async (e)=>{
-
+    user.image=userImg.name
+    
     e.preventDefault()
     setloading(true)
     const response = await fetch("https://e-commerce-mb34.onrender.com/signup",{
@@ -107,8 +110,8 @@ const LoginSignup = () => {
           <p className='label'>Password : </p>
 
           <input value={user.password} onChange={(e)=>{handleValue(e)}} name="password" type="text" placeholder='Password' />
-          <p>User Image</p>
-          <input type="file" name="file"  />
+          <p className='label'>User Image</p>
+          <input type="file" name="file" accept='image/*' onChange={(e)=>{setuserImg(e.target.files[0])}} />
           </div>
           <div className='userAddressInput'>
             
