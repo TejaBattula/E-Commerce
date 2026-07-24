@@ -98,7 +98,7 @@ app.post('/signup',upload.single("image"),async (req,res)=>{
             })
             await newuser.save()
             console.log("Data sent to Database");
-            res.send({status:200,message:"success",items:req.body.cartItems})
+            res.send({status:200,message:"success",items:newuser})
 
         }
 

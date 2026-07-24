@@ -12,7 +12,7 @@ const UserAccount = () => {
         <div className="accountBody">
             
             <div className='userImg'>
-                  <img src="" alt="" />
+                  <img src={userDetails.image} alt="" />
                 </div>
             
             <div className="userInfo">

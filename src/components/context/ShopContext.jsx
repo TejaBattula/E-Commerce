@@ -33,7 +33,7 @@ const ShopContextProvider = (props)=>{
     }
     const storeEmail = (items,value)=>{
         setemail(value)
-        setCartItems(items)
+        setCartItems(items.cartItems)
     }
     const contextvalue = {all_products,addcartItem,removecartItem,cartItems,setAccount,isacountcreated,storeEmail,email,setAccountDetails,userDetails}
 
