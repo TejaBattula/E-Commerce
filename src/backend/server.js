@@ -66,6 +66,7 @@ app.post('/signup',async (req,res)=>{
                 name : user.name,
                 email : user.email,
                 password : hashPassword,
+                image : user.image,
                 mobile : user.mobile,
                 address : user.address,
                 cartItems : cartItems
