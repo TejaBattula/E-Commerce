@@ -62,8 +62,6 @@
 }
 .cart-login a .fa-circle-user img{
     border-radius: 50%;
-    width: 35px;
-    height: 35px;
 }
 .categories li hr{
     height: 3px;
@@ -93,6 +91,9 @@
     .shop-logo{
         gap: 5px;
         margin-left: -5px;
+    }
+    .cart-login{
+        margin-right: 15px;
     }
     .categories{
         position:fixed;
@@ -175,8 +176,9 @@
         align-items: center;
     }
     .fa-circle-user img{
-        width: 55px;
+        width: 35px;
         height: 35px;
+        margin-left: 15px;
     }
 }
 @media screen and (min-width:679px) {
