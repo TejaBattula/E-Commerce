@@ -12,6 +12,7 @@
     justify-content: center;
     align-items: center;
     font-size: 15px;
+
 }
 .shop-logo img{
     width: 40px;
@@ -83,6 +84,7 @@
         padding: 0px;
         height: 70px;
         align-items: center;
+        justify-content: space-evenly;
     }
     .navbar i{
         font-size: 20px;
@@ -90,7 +92,7 @@
     }
     .shop-logo{
         gap: 5px;
-        margin-left: -10px;
+        margin-left: -5px;
     }
     .categories{
         position:fixed;
@@ -166,6 +168,15 @@
     }
     .cart-login a .fa-circle-user{
         padding-right: 15px;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .fa-circle-user img{
+        width: 55px;
+        height: 35px;
     }
 }
 @media screen and (min-width:679px) {
