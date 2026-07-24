@@ -65,8 +65,8 @@ const LoginSignup = () => {
       console.log("login Success!");
       navigate('/')
       setAccount()
-      storeEmail(data.items,user.email)
-      setAccountDetails(user)
+      storeEmail(data.items.cartItems,user.email)
+      setAccountDetails(data.items)
 
     }
     else if(data.message == "Invalid password or email"){

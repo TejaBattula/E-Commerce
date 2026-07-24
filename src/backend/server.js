@@ -94,7 +94,7 @@ app.post('/login',async(req,res)=>{
         if(isMatch){
             console.log("Valid user!");
             
-            return res.json({message : "Vaild user",status : 200,items : loginuser.cartItems})
+            return res.json({message : "Vaild user",status : 200,items : loginuser})
         }
         else{
             console.log("user not found!");
