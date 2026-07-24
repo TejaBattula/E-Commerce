@@ -92,7 +92,7 @@ app.post('/signup',upload.single("image"),async (req,res)=>{
                 image : req.file.path,
                 mobile :req.body.mobile,
                 address : req.body.address,
-                cartItems : req.body.cartItems
+                cartItems : JSON.parse(req.body.cartItems)
     
             })
             await newuser.save()
