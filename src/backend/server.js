@@ -3,6 +3,16 @@ const express = require("express")
 const cors = require("cors")
 const mongoose = require("mongoose")
 const bcrypt = require("bcrypt")
+const multer = require("multer")
+const cloudinary = require("cloudinary").v2
+const {CloudinaryStorage} = require("multer-storage-cloudinary")
+
+cloudinary.config({
+    cloud_name : process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET
+})
+
 
 const app=express()
 app.use(cors())
@@ -52,11 +62,21 @@ const UserSchema = new mongoose.Schema({
 
 const User = mongoose.model("Users",UserSchema)
 
+const storage = new CloudinaryStorage({
+    cloudinary : cloudinary,
+    params : {
+        folder : "e-commerce_users",
+        allowed_formats : ["jpg", "jpeg", "png", "webp"],
+    }
+})
   
-app.post('/signup',async (req,res)=>{
+const upload = multer({storage})
+
+app.post('/signup',upload.single("image"),async (req,res)=>{
     
     const {user,cartItems}=req.body
     console.log("=>",user.image);
+    console.log(req.userImg);
     
     const hashPassword = await bcrypt.hash(user.password,10)
     try {
