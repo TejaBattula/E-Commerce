@@ -21,7 +21,6 @@ const LoginSignup = () => {
     })
   }
   const handlesignup=async (e)=>{
-    console.log(user);
 
     e.preventDefault()
     setloading(true)
@@ -67,6 +66,7 @@ const LoginSignup = () => {
       navigate('/')
       setAccount()
       storeEmail(data.items,user.email)
+      setAccountDetails(user)
 
     }
     else if(data.message == "Invalid password or email"){
@@ -105,9 +105,7 @@ const LoginSignup = () => {
           <p className='label'>Password : </p>
 
           <input value={user.password} onChange={(e)=>{handleValue(e)}} name="password" type="text" placeholder='Password' />
-          <p className='label'>Password : </p>
-
-            <input type="text" name="" id="" />
+          
           </div>
           <div className='userAddressInput'>
             

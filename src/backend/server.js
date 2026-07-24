@@ -50,9 +50,7 @@ const User = mongoose.model("Users",UserSchema)
 
   
 app.post('/signup',async (req,res)=>{
-    console.log("hi");
     
-    console.log(req.body);
     const {user,cartItems}=req.body
     const hashPassword = await bcrypt.hash(user.password,10)
     try {
