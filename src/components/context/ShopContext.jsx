@@ -20,12 +20,14 @@ const ShopContextProvider = (props)=>{
     }
     const setAccount = ()=>{
         setaccountcreated(!isacountcreated)
+        if(isacountcreated === false){
+            setCartItems()
+            setUserDetails()
+        }
     }
     const addcartItem = (props)=>{
-        console.log(props);
         
         setCartItems((prev)=>({...prev,[props]:prev[props]+1}))
-        console.log(cartItems);
         
     }
     const removecartItem = (props)=>{
